@@ -1,0 +1,66 @@
+
+a {
+  text-decoration: none;
+}
+
+.main-list {
+  margin: auto;
+  flex: 0;
+}
+.main-list ol {
+  column-count: 3;
+  column-gap: 10vw;
+}
+mark {
+  background-color: #ffc107;
+  border-radius: 5px;
+}
+
+.ayat {
+  padding: 8px;
+  margin-bottom: 0;
+}
+
+.selected {
+  background-color: rgb(255, 244, 229);
+  border-radius: .25rem;
+}
+
+.navbar-form {
+  display: flex;
+  gap: 8px;
+}
+
+.navbar-form select {
+  width: 150px;
+}
+
+
+@media (min-width: 1000px) {
+  .main-list ol {
+    column-count: 4;
+
+  }
+}
+
+@media (min-width: 576px) {
+.container-sm {
+    max-width: 644px;
+  }
+}
+
+
+
+@media(max-width:630px) {
+  .main-list ol {
+    column-count: 2;
+
+  }
+}
+
+@media(max-width:420px) {
+  .main-list ol {
+    column-count: 1;
+
+  }
+}

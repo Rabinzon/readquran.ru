@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Chapter {
+  id                 Int     @id @default(autoincrement())
+  name               String
+  verses             Verse[]
+  chronologicalOrder Int
+}
+
+model Verse {
+  id            Int          @id @default(autoincrement())
+  text          String
+  order         Int?
+  chapterId     Int?
+  translation   Translation? @relation(fields: [translationId], references: [id])
+  translationId Int?
+  chapter       Chapter?     @relation(fields: [chapterId], references: [id])
+
+  @@unique([order, chapterId, translationId])
+}
+
+model Translation {
+  id     Int     @id @default(autoincrement())
+  author String
+  verses Verse[]
+}
