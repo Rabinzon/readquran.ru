@@ -16,6 +16,6 @@ block content
       each verse in verses || []
         p.my-1
           p.p-1.text-muted
-            a(href=verse.chapterId + '/' + verse.order).text-decoration-none.text-dark
+            a(href=`/surah/${verse.chapterId}/ayat/${verse.order}`).text-decoration-none.text-dark
               span.badge.bg-dark.me-1=verse.chapterId + ':' + verse.order
               span!=verse.text
