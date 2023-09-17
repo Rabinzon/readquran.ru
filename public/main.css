@@ -26,7 +26,6 @@ mark {
 }
 
 .selected {
-  background-color: rgb(255, 244, 229);
   border-radius: .25rem;
 }
 
