@@ -13,6 +13,6 @@ block content
           p.lead=verse.translation.author
           p.p-1.text-muted
             - var href = `/surah/${id}#ayat-${verse.order}`
-            a(href=href).text-decoration-none.text-dark
-              span.badge.bg-dark.me-1=id + ':' + verse.order
+            a(href=href).text-decoration-none.link-body-emphasis
+              span.badge.bg-body-secondary.me-1=id + ':' + verse.order
               span!=verse.text
