@@ -5,15 +5,23 @@ function getCookie(name) {
 
 (function () {
   const selectElement = document.querySelector('.js-translation-select');
-  console.log(getCookie('translationId'));
+
   selectElement.value = getCookie('translationId') || 1;
 
   selectElement.addEventListener('change', ({ target }) => {
-    console.log(target.value);
     document.cookie = `translationId=${target.value}`;
 
     window.location.reload();
   });
+
+  document
+    .querySelector('html')
+    .setAttribute(
+      'data-bs-theme',
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light',
+    );
 
   const hash = window.location.hash;
 
@@ -27,5 +35,4 @@ function getCookie(name) {
   }
 
   element.classList.add('selected');
-  console.log(element);
 })();
