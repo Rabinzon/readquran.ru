@@ -1,3 +1,6 @@
+body {
+  font-family: 'PT Sans', sans-serif;
+}
 
 a {
   text-decoration: none;
@@ -17,7 +20,8 @@ mark {
 }
 
 .ayat {
-  padding: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   margin-bottom: 0;
 }
 
@@ -44,7 +48,7 @@ mark {
 }
 
 @media (min-width: 576px) {
-.container-sm {
+  .container-sm {
     max-width: 644px;
   }
 }
@@ -54,7 +58,10 @@ mark {
 @media(max-width:630px) {
   .main-list ol {
     column-count: 2;
+  }
 
+  .navbar-form select {
+    width: 100px;
   }
 }
 
