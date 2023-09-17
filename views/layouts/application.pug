@@ -1,5 +1,5 @@
 doctype html
-html(lang="en")
+html(lang="ru" data-bs-theme="dark")
   head
     title= 'Священный Коран в хронологическом порядке'
     meta(name='description' content='Сайт для удобного чтения Корана в хронологическом порядке. Доступны переводы И. Ю. Крачковского, Э. Р. Кулиева.')
@@ -14,14 +14,14 @@ html(lang="en")
     meta(name='msapplication-config', content='/assets/favicon/browserconfig.xml?v=wAXXEkEEYG')
     meta(name='theme-color', content='#ffffff')
     link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css")
-    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous")
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous")
     link(rel="preconnect", href="https://fonts.googleapis.com")
     link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap", rel="stylesheet")
     link(rel='stylesheet', href='/main.css')
 
   body.d-flex.flex-column.justify-content-between
-    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    nav.navbar.navbar-expand-lg.bg-body-tertiary
       .container
         a.navbar-brand(href='/')
           i.bi.bi-book-half.pe-1
