@@ -4,9 +4,19 @@ block content
   .row.justify-content-md-center
     .col-md-8.col-sm-12
       .text-center.my-5
-        h1 Перевод священного Корана
-        p.lead.mb-0 на русский язык
-        img(class="w-50 my-4" src="/bismillah.png")
+        h1.fw-bold Перевод священного Корана на русский язык
+        figure.text-center
+          blockquote.blockquote
+            p Мы облегчили Коран для поминания. Но есть ли среди вас вспоминающие?
+          figcaption.blockquote-footer Сура 54, 17-й аят
+
+        form(action="/search").d-flex.w-50.mx-auto
+          .input-group
+            input.form-control(type='search' value=query || '' name="query" placeholder='Поиск аятов')
+            button.btn.btn-outline-success(type='submit') Найти
+
+        // p.lead.mb-0
+        // img(class="w-50 my-4" src="/bismillah.png")
 
   .row
     .col.main-list
