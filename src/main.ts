@@ -19,10 +19,6 @@ async function bootstrap() {
   app.use(cookieParser());
 
   await app.listen(configService.get('PORT'));
-
-  const fn = () => {
-    console.log('keke');
-  };
 }
 
 bootstrap();
