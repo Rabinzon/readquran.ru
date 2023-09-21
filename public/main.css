@@ -10,10 +10,17 @@ a {
   margin: auto;
   flex: 0;
 }
+
 .main-list ol {
   column-count: 3;
   column-gap: 10vw;
 }
+
+.main-list li {
+  white-space: nowrap;
+  margin-bottom: 8px;
+}
+
 mark {
   background-color: #ffc107;
   border-radius: 5px;
