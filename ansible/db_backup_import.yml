@@ -1,0 +1,12 @@
+---
+- hosts: all
+  vars:
+    filename: "?"
+  tasks:
+    - name: Upload the backup file
+      copy:
+        src: "../backups/{{filename}}"
+        dest: "./root/{{filename}}"
+
+    - name: Import the backup file
+      ansible.builtin.shell: dokku postgres:import default < {{filename}}

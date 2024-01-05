@@ -24,12 +24,13 @@
       dokku_app:
         # change this name in your template!
         app: &appname readquran
+
     - name: environment configuration
       dokku_config:
         app: *appname
         config:
           # specify port so `domains` can setup the port mapping properly
-          PORT: "8080"
+          PORT: "5000"
 
     - name: postgres:create default
       dokku_service_create:
@@ -42,22 +43,22 @@
         name: default
         service: postgres
 
-    - name: ports:set http:80:80
-      dokku_ports:
+    - name: domains:clear readquran
+      dokku_domains:
         app: *appname
-        mappings:
-          - http:80:8080
+        domains:
+          - readquran.dokku.me
+        state: absent
 
-    - name: ports:set http:80:80
-      dokku_ports:
+    - name: add domain
+      dokku_domains:
         app: *appname
-        mappings:
-          - https:443:8080
-    # - name: add domain
-    #   dokku_domains:
-    #     app: *appname
-    #     domains:
-    #       - example.com
-    # - name: add letsencrypt
-    #   dokku_letsencrypt:
-    #     app: *appname
+        domains:
+          - readquran.ru
+
+    - name: set letsencrypt email
+      ansible.builtin.shell: dokku letsencrypt:set readquran email ildarrazin@gmail.com
+
+    - name: add letsencrypt
+      dokku_letsencrypt:
+        app: *appname

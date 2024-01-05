@@ -1,0 +1,14 @@
+---
+- hosts: all
+  vars:
+    filename: "{{ansible_date_time.iso8601}}.dump"
+  tasks:
+    - name: Create backup file of database
+      ansible.builtin.shell: dokku postgres:export default > {{filename}}
+
+    - name: Download the backup file
+      ansible.builtin.fetch:
+        src: "/root/{{filename}}"
+        dest: ../backups/
+        flat: true
+
