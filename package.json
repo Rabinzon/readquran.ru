@@ -17,7 +17,10 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "deploy:setup": "ansible-playbook -i ansible/hosts -u root  ansible/vps_setup.yml -vvv",
+    "db:backup:import": "ansible-playbook -i ansible/hosts -u root  ansible/db_backup_import.yml -vvv",
+    "db:backup:export": "ansible-playbook -i ansible/hosts -u root  ansible/db_backup_export.yml -vvv"
   },
   "dependencies": {
     "@nestjs/cli": "^10.0.0",
